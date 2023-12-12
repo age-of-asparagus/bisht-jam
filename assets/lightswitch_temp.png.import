@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bisht_jam_tilemap_temp.png-40ffa8437d804c8aa54d05dc11714520.stex"
+path="res://.import/lightswitch_temp.png-2d6afa86feab75a2837978f1f6ccd297.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/bisht_jam_tilemap_temp.png"
-dest_files=[ "res://.import/bisht_jam_tilemap_temp.png-40ffa8437d804c8aa54d05dc11714520.stex" ]
+source_file="res://assets/lightswitch_temp.png"
+dest_files=[ "res://.import/lightswitch_temp.png-2d6afa86feab75a2837978f1f6ccd297.stex" ]
 
 [params]
 

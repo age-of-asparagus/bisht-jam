@@ -27,6 +27,7 @@ wait_time = 0.25
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
