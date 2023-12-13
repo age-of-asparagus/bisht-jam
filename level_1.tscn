@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/world/bisht_tilemap_temp.png" type="Texture" id=3]
+[ext_resource path="res://NotBadKamTileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://light_switch.tscn" type="PackedScene" id=4]
 [ext_resource path="res://level_1.gd" type="Script" id=5]
+[ext_resource path="res://assets/New Piskel-16.png (1).png" type="Texture" id=6]
 
 [sub_resource type="NavigationPolygon" id=9]
 vertices = PoolVector2Array( 18, 38, -26, 38, -26, 26, 30, 26, 30, 74, 18, 74 )
@@ -31,31 +32,15 @@ vertices = PoolVector2Array( 2, 48, 58, 48, 58, 82, -76, 168, 212, 82, 212, 168,
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 5, 3 ), PoolIntArray( 0, 3, 6, 7 ), PoolIntArray( 7, 6, 8, 9 ) ]
 outlines = [ PoolVector2Array( 58, 48, 58, 82, 212, 82, 212, 168, -76, 168, -76, -120, 52, -120, 52, -16, 2, -16, 2, 48 ) ]
 
-[sub_resource type="ConvexPolygonShape2D" id=22]
-points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
-
-[sub_resource type="ConvexPolygonShape2D" id=23]
-points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
-
-[sub_resource type="ConvexPolygonShape2D" id=24]
-points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
-
-[sub_resource type="ConvexPolygonShape2D" id=25]
-points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=26]
-points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
-
-[sub_resource type="ConvexPolygonShape2D" id=27]
-points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
-
 [sub_resource type="TileSet" id=21]
-0/name = "bisht_tilemap_temp.png 0"
-0/texture = ExtResource( 3 )
+0/name = "New Piskel-16.png (1).png 0"
+0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 24 )
-0/tile_mode = 2
+0/region = Rect2( 0, 0, 96, 32 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 144, Vector2( 0, 1 ), 146, Vector2( 0, 2 ), 18, Vector2( 0, 3 ), 16, Vector2( 1, 0 ), 176, Vector2( 1, 1 ), 178, Vector2( 1, 2 ), 50, Vector2( 1, 3 ), 48, Vector2( 2, 0 ), 184, Vector2( 2, 1 ), 186, Vector2( 2, 2 ), 58, Vector2( 2, 3 ), 56, Vector2( 3, 0 ), 152, Vector2( 3, 1 ), 154, Vector2( 3, 2 ), 26, Vector2( 3, 3 ), 24, Vector2( 4, 0 ), 187, Vector2( 4, 1 ), 434, Vector2( 4, 2 ), 182, Vector2( 4, 3 ), 250, Vector2( 5, 0 ), 440, Vector2( 5, 1 ), 510, Vector2( 5, 2 ), 447, Vector2( 5, 3 ), 62, Vector2( 6, 0 ), 248, Vector2( 6, 1 ), 507, Vector2( 6, 2 ), 255, Vector2( 6, 3 ), 59, Vector2( 7, 0 ), 190, Vector2( 7, 1 ), 218, Vector2( 7, 2 ), 155, Vector2( 7, 3 ), 186, Vector2( 8, 0 ), 432, Vector2( 8, 1 ), 438, Vector2( 8, 2 ), 446, Vector2( 8, 3 ), 54, Vector2( 9, 0 ), 506, Vector2( 9, 1 ), 254, Vector2( 9, 2 ), 511, Vector2( 9, 3 ), 63, Vector2( 10, 0 ), 504, Vector2( 10, 2 ), 443, Vector2( 10, 3 ), 191, Vector2( 11, 0 ), 216, Vector2( 11, 1 ), 251, Vector2( 11, 2 ), 219, Vector2( 11, 3 ), 27 ]
 0/autotile/icon_coordinate = Vector2( 0, 0 )
 0/autotile/tile_size = Vector2( 8, 8 )
 0/autotile/spacing = 0
@@ -67,56 +52,19 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 22 )
 0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 1, 2 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 22 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 2 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 23 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 1, 1 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 24 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 1 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 25 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 1, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 26 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 27 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
 0/z_index = 0
 
 [node name="level_1" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="background_color" type="ColorRect" parent="."]
-margin_left = -4272.0
-margin_top = -3290.0
-margin_right = 4326.0
-margin_bottom = 3244.0
+margin_left = -4306.0
+margin_top = -3286.0
+margin_right = 4292.0
+margin_bottom = 3248.0
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 z_index = 1
@@ -165,15 +113,19 @@ navpoly = SubResource( 12 )
 [node name="tiles" type="Node2D" parent="."]
 
 [node name="walls" type="TileMap" parent="tiles"]
+position = Vector2( 1, 0 )
 z_index = 2
 tile_set = SubResource( 21 )
 cell_size = Vector2( 8, 8 )
-cell_quadrant_size = 8
-cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -589822, -1073741824, 131072, -589821, -1073741824, 131073, -589820, -1073741824, 131073, -589819, -1073741824, 131073, -589818, -1073741824, 131073, -589817, 0, 131072, -524286, 1610612736, 131073, -524281, 0, 131073, -458750, 1610612736, 131073, -458745, 0, 131073, -393214, 1610612736, 131073, -393209, 0, 131073, -327678, 1610612736, 131073, -327673, 0, 131073, -262142, 1610612736, 131072, -262141, -1610612736, 131073, -262140, -1610612736, 131073, -262139, -1610612736, 131073, -262138, -1610612736, 131073, -262137, -1610612736, 131072, 65526, -1610612736, 1, 65527, -1610612736, 0, 65528, -1610612736, 0, 65529, -1610612736, 0, 65530, -1610612736, 0, 65531, -1073741824, 1, 196605, -1610612736, 1, 196606, -1610612736, 0, 196607, -1610612736, 0, 131072, -1610612736, 0, 131073, -1610612736, 0, 131074, -1610612736, 0, 131075, -1610612736, 0, 131076, 0, 65537, 196612, 1610612736, 0, 262148, 1610612736, 0, 393213, -1073741824, 131072, 393214, -1073741824, 131073, 393215, -1073741824, 131073, 327680, -1073741824, 131073, 327681, 0, 131072, 327684, 1610612736, 0, 458749, 1610612736, 131073, 393217, 0, 131073, 393220, 1610612736, 0, 524285, 1610612736, 131073, 458753, 0, 131073, 458756, 1610612736, 0, 589821, 1610612736, 131072, 589822, -1610612736, 131073, 589823, -1610612736, 131073, 524288, -1610612736, 131073, 524289, -1610612736, 131072, 524292, 0, 1 )
+tile_data = PoolIntArray( -1114088, 1610612736, 196609, -1114087, 1610612736, 196611, -131070, 1610612736, 196609, -131069, 1610612736, 196611 )
+
+[node name="TileMap" type="TileMap" parent="tiles"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 8, 8 )
+format = 1
 
 [node name="switches" type="Node2D" parent="."]
 
