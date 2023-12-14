@@ -57,10 +57,6 @@ shape = SubResource( 1 )
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -4.17233e-07, 0 )
-scale = Vector2( 0.5, 0.5 )
-
 [node name="stunned_timer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
@@ -70,5 +66,4 @@ anims/Blink = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 anims/blink = SubResource( 4 )
 
-[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="timeout" from="stunned_timer" to="." method="_on_stunned_timer_timeout"]

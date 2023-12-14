@@ -43,7 +43,7 @@ func _physics_process(delta):
 	velocity += pushback
 	
 	look_at(get_global_mouse_position())
-	
+	print(global_rotation_degrees)
 	move_and_slide(velocity)
 	
 	if not invicible:
@@ -71,7 +71,8 @@ func _physics_process(delta):
 			$attack_rate.start(attack_rate)
 			can_attack = false
 			attack()
-		
+	
+
 func get_hurt():
 	health -= 1
 	if health <= 0:
@@ -124,3 +125,7 @@ func _on_attack_box_body_entered(body):
 
 func _on_attack_rate_timeout():
 	can_attack = true
+
+
+func _on_enemy_detector_body_exited(body):
+	body.attacking = true

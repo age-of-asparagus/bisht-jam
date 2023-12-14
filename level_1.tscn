@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://level_1.gd" type="Script" id=5]
 [ext_resource path="res://assets/lightswitch_temp.png" type="Texture" id=6]
 [ext_resource path="res://final_light_switch.gd" type="Script" id=7]
-[ext_resource path="res://enemy.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
@@ -654,75 +653,57 @@ position = Vector2( 510, 104 )
 
 [node name="enemy23" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 642, 138 )
-script = ExtResource( 8 )
 
 [node name="enemy24" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 652, 22 )
-script = ExtResource( 8 )
 
 [node name="enemy27" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 656, 64 )
-script = ExtResource( 8 )
 
 [node name="enemy28" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 576, -68 )
-script = ExtResource( 8 )
 
 [node name="enemy29" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 536, -4 )
-script = ExtResource( 8 )
 
 [node name="enemy25" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 654, -58 )
-script = ExtResource( 8 )
 
 [node name="enemy26" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 654, -108 )
-script = ExtResource( 8 )
 
 [node name="enemy40" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 348, -262 )
-script = ExtResource( 8 )
 
 [node name="enemy41" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 262, -262 )
-script = ExtResource( 8 )
 
 [node name="enemy42" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 254, -228 )
-script = ExtResource( 8 )
 
 [node name="enemy43" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 290, -256 )
-script = ExtResource( 8 )
 
 [node name="enemy44" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 266, -200 )
-script = ExtResource( 8 )
 
 [node name="enemy45" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 288, -228 )
-script = ExtResource( 8 )
 
 [node name="enemy46" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 298, -176 )
-script = ExtResource( 8 )
 
 [node name="enemy47" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 326, -242 )
-script = ExtResource( 8 )
 
 [node name="enemy48" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 326, -168 )
-script = ExtResource( 8 )
 
 [node name="enemy49" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 252, -152 )
-script = ExtResource( 8 )
 
 [node name="enemy50" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 258, -170 )
-script = ExtResource( 8 )
 
 [node name="enemy15" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 600, 96 )
