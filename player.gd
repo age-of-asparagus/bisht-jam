@@ -77,6 +77,7 @@ func get_hurt():
 	if health <= 0:
 		get_tree().change_scene("res://StartMenu.tscn")
 	set_invincible(true)
+	$AudioStreamPlayer.play()
 
 
 func attack():
