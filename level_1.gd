@@ -12,3 +12,7 @@ func _physics_process(delta):
 		enemies.show()
 		tiles.hide()
 		$background_color.color = Color(255,255,255)
+
+
+func _on_final_light_switch_body_entered(body):
+	get_tree().change_scene("res://StartMenu.tscn")
