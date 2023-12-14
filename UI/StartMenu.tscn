@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://StartMenu.gd" type="Script" id=1]
+[ext_resource path="res://UI/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/screen_off.png" type="Texture" id=2]
 [ext_resource path="res://assets/screen_on.png" type="Texture" id=3]
 [ext_resource path="res://UI/StartMenuButton.tres" type="StyleBox" id=4]
 [ext_resource path="res://assets/lightswitch_temp.png" type="Texture" id=5]
 [ext_resource path="res://UI/ClickMe.png" type="Texture" id=6]
+[ext_resource path="res://assets/sounds/404049__deathscyp__breaker-1.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/524308__bertsz__corporate-company-introduction-video.mp3" type="AudioStream" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0, 0, 1 )
@@ -91,11 +93,19 @@ shortcut_in_tooltip = false
 text = "START"
 
 [node name="Label" type="Label" parent="."]
-visible = false
-anchor_right = 1.0
-margin_top = 20.0
-margin_bottom = 34.0
-text = "(IN) VISIBLE"
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 41.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 6
+text = "IN / VISIBLE"
 align = 1
 
 [node name="LightButton" type="TextureButton" parent="."]
@@ -201,6 +211,14 @@ texture_hover = ExtResource( 5 )
 texture_focused = ExtResource( 5 )
 expand = true
 flip_v = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="MenuSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="LightButton" to="." method="_on_LightButton_pressed"]

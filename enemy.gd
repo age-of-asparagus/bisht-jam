@@ -22,14 +22,19 @@ func _physics_process(delta):
 
 
 func got_hit():
-	stunned_timer.start()
+	
 	stunned = true
 	health -= 1
 	$AnimationPlayer.play("Blink")
 	$AudioStreamPlayer.play()
+	$CollisionShape2D.disabled = true
 	
 	if health <= 0:
-		queue_free()
+#		visible = false
+		$DeathAudioPlayer.play()
+		# Queue_free when sound finished (via signal)
+	else:
+		stunned_timer.start()
 
 func _on_VisibilityNotifier2D_screen_entered():
 	attacking = true
@@ -37,4 +42,9 @@ func _on_VisibilityNotifier2D_screen_entered():
 
 func _on_stunned_timer_timeout():
 	stunned = false
+	$CollisionShape2D.disabled = false
 	$AnimationPlayer.play("RESET")
+
+
+func _on_DeathAudioPlayer_finished():
+	queue_free()

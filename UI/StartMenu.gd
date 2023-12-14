@@ -24,3 +24,4 @@ func _on_Button_pressed():
 
 func _on_LightButton_pressed():
 	off_texture_rect.visible = !off_texture_rect.visible
+	$AudioStreamPlayer.play()

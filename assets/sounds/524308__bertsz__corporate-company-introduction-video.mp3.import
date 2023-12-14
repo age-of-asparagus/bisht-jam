@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/524308__bertsz__corporate-company-introduction-video.mp3-3d35e83536e3ae0c465a1e4d91ddf938.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/524308__bertsz__corporate-company-introduction-video.mp3"
+dest_files=[ "res://.import/524308__bertsz__corporate-company-introduction-video.mp3-3d35e83536e3ae0c465a1e4d91ddf938.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

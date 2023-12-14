@@ -43,7 +43,6 @@ func _physics_process(delta):
 	velocity += pushback
 	
 	look_at(get_global_mouse_position())
-	print(global_rotation_degrees)
 	move_and_slide(velocity)
 	
 	if not invicible:
@@ -76,7 +75,7 @@ func _physics_process(delta):
 func get_hurt():
 	health -= 1
 	if health <= 0:
-		get_tree().change_scene("res://StartMenu.tscn")
+		get_tree().change_scene("res://DeadMenu.tscn")
 	set_invincible(true)
 	$AudioStreamPlayer.play()
 
