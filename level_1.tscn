@@ -503,22 +503,14 @@ margin_top = -3296.0
 margin_right = 4380.0
 margin_bottom = 3238.0
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -52, 82 )
-z_index = 1
-
 [node name="enemies" type="Node2D" parent="."]
-visible = false
 z_index = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="enemy" parent="enemies" instance=ExtResource( 2 )]
-position = Vector2( -49, 45 )
-
-[node name="enemy2" parent="enemies" instance=ExtResource( 2 )]
-position = Vector2( -58, -90 )
+position = Vector2( -56, 26 )
 
 [node name="enemy3" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 166, -74 )
@@ -539,16 +531,13 @@ position = Vector2( 244, -82 )
 position = Vector2( 82, 60 )
 
 [node name="enemy7" parent="enemies" instance=ExtResource( 2 )]
-position = Vector2( 78, 126 )
-
-[node name="enemy8" parent="enemies" instance=ExtResource( 2 )]
-position = Vector2( -110, 70 )
+position = Vector2( 93, -90 )
 
 [node name="enemy9" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 228, 108 )
 
 [node name="enemy10" parent="enemies" instance=ExtResource( 2 )]
-position = Vector2( 282, -8 )
+position = Vector2( 264, -13 )
 
 [node name="enemy11" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 396, 70 )
@@ -576,9 +565,6 @@ position = Vector2( 612, -82 )
 
 [node name="enemy19" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 522, -10 )
-
-[node name="enemy5" parent="enemies" instance=ExtResource( 2 )]
-position = Vector2( 118, 2 )
 
 [node name="tiles" type="Node2D" parent="."]
 __meta__ = {
@@ -675,6 +661,7 @@ position = Vector2( 182, 52 )
 position = Vector2( 146, -86 )
 
 [node name="navigation" type="Node2D" parent="."]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="navigation"]
 navpoly = SubResource( 71 )
@@ -687,3 +674,7 @@ navpoly = SubResource( 73 )
 
 [node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="navigation"]
 navpoly = SubResource( 74 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -87, 83 )
+z_index = 1

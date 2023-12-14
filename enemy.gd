@@ -4,7 +4,7 @@ var velocity = Vector2.ZERO
 var speed = 50
 onready var player = get_parent().get_parent().get_node("player")
 onready var navigation = get_node("NavigationAgent2D")
-var attacking = true
+var attacking = false
 
 func _physics_process(delta):
 	
@@ -18,5 +18,5 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 
 
-func _on_Area2D_body_entered(body):
+func _on_VisibilityNotifier2D_screen_entered():
 	attacking = true
