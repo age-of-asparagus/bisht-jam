@@ -10,8 +10,7 @@ onready var navigation = get_node("NavigationAgent2D")
 var attacking = false
 
 func _physics_process(delta):
-	if health <= 0:
-		queue_free()
+
 	if not stunned:
 		if attacking:
 			navigation.set_target_location(player.global_position)
@@ -27,7 +26,10 @@ func got_hit():
 	stunned = true
 	health -= 1
 	$AnimationPlayer.play("Blink")
-	print("ouch")
+	$AudioStreamPlayer.play()
+	
+	if health <= 0:
+		queue_free()
 
 func _on_VisibilityNotifier2D_screen_entered():
 	attacking = true

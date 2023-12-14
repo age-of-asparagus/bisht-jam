@@ -88,6 +88,7 @@ func attack():
 #	get_parent().add_child(spit)
 	$attack_particles.restart()
 	$attack_box/CollisionShape2D.disabled = false
+	$SpitAudioStreamPlayer.play()
 	
 
 func set_invincible(status=true):
