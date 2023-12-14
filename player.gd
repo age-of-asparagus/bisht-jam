@@ -1,10 +1,18 @@
 extends KinematicBody2D
+onready var tween = $Tween
 
 var can_switch = false
 var strength = .01
 var velocity = Vector2.ZERO
-var speed = 75
+var max_speed = 75
+var friction = 10
+var acceleration = 10
+
 var can_attack = true
+var invicible = false
+var last_collision: KinematicCollision2D
+var pushback = Vector2.ZERO
+var pushback_strength = 80
 
 func _physics_process(delta):
 	
@@ -14,26 +22,63 @@ func _physics_process(delta):
 		else:
 			Global.lights_out = true
 		
+	var direction = Input.get_vector("move_left" , "move_right" , "move_up" , "move_down")
 	
-	velocity = Input.get_vector("move_left" , "move_right" , "move_up" , "move_down") * speed
+	if direction == Vector2.ZERO:
+		velocity = velocity.move_toward(Vector2.ZERO, friction)
+	else:
+		velocity += direction * acceleration
+		velocity = velocity.limit_length(max_speed)
+		
+	pushback = pushback.move_toward(Vector2.ZERO, friction)
+		
+	velocity += pushback
 	
 	look_at(get_global_mouse_position())
-	
 	move_and_slide(velocity)
 	
+	last_collision = get_last_slide_collision()
+	if last_collision and last_collision.collider is Enemy:
+		pushback = last_collision.normal * pushback_strength
 	
 	if Input.is_action_just_pressed("attack"):
 		can_attack = false
 		attack()
 
 
-
-
 func attack():
 	pass
+	
 
+func set_invincible(status=true):
+	# toggle invicible flag 
+	invicible = status
+	# toggle flash character
+	if status:
+		$AnimationPlayer.play("Flash")
+	else:
+		$AnimationPlayer.play("RESET")
+	# toggle collision with enemies
+	set_collision_mask_bit(4, not status)
+	set_collision_layer_bit(0, not status)
+	
+	$InvincibilityTimer.start()
+	
 
 func _on_Area2D_body_entered(body):
-	var direction = (body.global_position - global_position).normalized()
-	var velocity_in_direction = velocity.dot(direction)
-	body.global_position += velocity_in_direction * -direction * strength
+	if not invicible:
+		# Then just got hit
+		print("Ouch")
+		set_invincible(true)
+#
+#		# jump back
+		print(last_collision)
+			
+		
+#	var direction = (body.global_position - global_position).normalized()
+#	var velocity_in_direction = velocity.dot(direction)
+#	body.global_position += velocity_in_direction * -direction * strength
+
+
+func _on_InvincibilityTimer_timeout():
+	set_invincible(false)
