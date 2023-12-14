@@ -41,7 +41,10 @@ func _physics_process(delta):
 	
 	last_collision = get_last_slide_collision()
 	if last_collision and last_collision.collider.is_in_group("Enemies"):
+		# Hit by an enemy if it reaches here:
 		pushback = last_collision.normal * pushback_strength
+		health -= 1
+		set_invincible(true)
 	
 	if Input.is_action_just_pressed("attack"):
 		can_attack = false
@@ -67,14 +70,13 @@ func set_invincible(status=true):
 	$InvincibilityTimer.start()
 	
 
-func _on_Area2D_body_entered(body):
-	if not invicible:
-		health -= 1
-		set_invincible(true)
-		
-#	var direction = (body.global_position - global_position).normalized()
-#	var velocity_in_direction = velocity.dot(direction)
-#	body.global_position += velocity_in_direction * -direction * strength
+#func _on_Area2D_body_entered(body):
+#	if not invicible:
+#
+#		print(last_collision)
+##	var direction = (body.global_position - global_position).normalized()
+##	var velocity_in_direction = velocity.dot(direction)
+##	body.global_position += velocity_in_direction * -direction * strength
 
 
 func _on_InvincibilityTimer_timeout():
