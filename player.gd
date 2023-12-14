@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var Spit = preload("res://attack_particles.tscn")
+var attack_rate = .5
 onready var hearts : TextureRect = $CanvasLayer/hearts
 var can_switch = false
 var strength = .01
@@ -52,11 +54,17 @@ func _physics_process(delta):
 		set_invincible(true)
 	
 	if Input.is_action_just_pressed("attack"):
-		can_attack = false
-		attack()
+		if can_attack:
+			$attack_rate.start(attack_rate)
+			can_attack = false
+			attack()
 
 
 func attack():
+#	var spit = Spit.instance()
+#	spit.emitting = true
+#	spit.global_position = $spit_spawn.global_position
+#	get_parent().add_child(spit)
 	$attack_particles.restart()
 	$attack_box/CollisionShape2D.disabled = false
 	
@@ -93,3 +101,7 @@ func _on_attack_box_body_entered(body):
 	$attack_box/CollisionShape2D.disabled = true
 	print("hi")
 	body.health -= 1
+
+
+func _on_attack_rate_timeout():
+	can_attack = true

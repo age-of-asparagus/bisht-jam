@@ -497,7 +497,6 @@ outlines = [ PoolVector2Array( 14, -22, 14, 14, 42, 14, 42, 74, 74, 74, 74, 134,
 script = ExtResource( 5 )
 
 [node name="background_color" type="ColorRect" parent="."]
-visible = false
 margin_left = -4218.0
 margin_top = -3296.0
 margin_right = 4380.0
