@@ -38,7 +38,7 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	
 	last_collision = get_last_slide_collision()
-	if last_collision and last_collision.collider is Enemy:
+	if last_collision and last_collision.collider.is_in_group("Enemies"):
 		pushback = last_collision.normal * pushback_strength
 	
 	if Input.is_action_just_pressed("attack"):
@@ -59,7 +59,7 @@ func set_invincible(status=true):
 	else:
 		$AnimationPlayer.play("RESET")
 	# toggle collision with enemies
-	set_collision_mask_bit(4, not status)
+	set_collision_mask_bit(2, not status)
 	set_collision_layer_bit(0, not status)
 	
 	$InvincibilityTimer.start()
