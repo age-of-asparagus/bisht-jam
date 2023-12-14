@@ -76,6 +76,7 @@ shape = SubResource( 2 )
 margin_right = 22.0
 margin_bottom = 18.0
 texture = ExtResource( 3 )
+expand = true
 stretch_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

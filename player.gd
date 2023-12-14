@@ -44,6 +44,8 @@ func _physics_process(delta):
 		# Hit by an enemy if it reaches here:
 		pushback = last_collision.normal * pushback_strength
 		health -= 1
+		if health <= 0:
+			get_tree().change_scene("res://StartMenu.tscn")
 		set_invincible(true)
 	
 	if Input.is_action_just_pressed("attack"):
