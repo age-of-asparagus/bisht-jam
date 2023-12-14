@@ -117,10 +117,8 @@ func _on_InvincibilityTimer_timeout():
 
 
 func _on_attack_box_body_entered(body):
-	body.stunned = true
-	body.stunned_timer.start()
+	body.got_hit()
 	$attack_box/CollisionShape2D.disabled = true
-	body.health -= 1
 
 
 func _on_attack_rate_timeout():

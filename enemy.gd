@@ -22,9 +22,17 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 
 
+func got_hit():
+	stunned_timer.start()
+	stunned = true
+	health -= 1
+	$AnimationPlayer.play("Blink")
+	print("ouch")
+
 func _on_VisibilityNotifier2D_screen_entered():
 	attacking = true
 
 
 func _on_stunned_timer_timeout():
 	stunned = false
+	$AnimationPlayer.play("RESET")
