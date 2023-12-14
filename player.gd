@@ -16,6 +16,9 @@ var pushback_strength = 80
 
 func _physics_process(delta):
 	
+	
+	$attack_box/CollisionShape2D.disabled = true
+	
 	hearts.rect_size.x = health * 22
 	
 	if Input.is_action_just_pressed("interact") and can_switch:
@@ -54,7 +57,8 @@ func _physics_process(delta):
 
 
 func attack():
-	pass
+	$attack_particles.restart()
+	$attack_box/CollisionShape2D.disabled = false
 	
 
 func set_invincible(status=true):
@@ -83,3 +87,9 @@ func set_invincible(status=true):
 
 func _on_InvincibilityTimer_timeout():
 	set_invincible(false)
+
+
+func _on_attack_box_body_entered(body):
+	$attack_box/CollisionShape2D.disabled = true
+	print("hi")
+	body.health -= 1
