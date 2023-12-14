@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/345991__matrixxx__wide-button-switch-off.wav-fb1dfdb9a7ab356554b285b11e9e3e8f.sample"
+
+[deps]
+
+source_file="res://assets/sounds/345991__matrixxx__wide-button-switch-off.wav"
+dest_files=[ "res://.import/345991__matrixxx__wide-button-switch-off.wav-fb1dfdb9a7ab356554b285b11e9e3e8f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
