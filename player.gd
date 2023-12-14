@@ -1,13 +1,13 @@
 extends KinematicBody2D
-onready var tween = $Tween
 
+onready var hearts : TextureRect = $CanvasLayer/hearts
 var can_switch = false
 var strength = .01
 var velocity = Vector2.ZERO
 var max_speed = 75
 var friction = 10
 var acceleration = 10
-
+var health = 5
 var can_attack = true
 var invicible = false
 var last_collision: KinematicCollision2D
@@ -15,6 +15,8 @@ var pushback = Vector2.ZERO
 var pushback_strength = 80
 
 func _physics_process(delta):
+	
+	hearts.rect_size.x = health * 22
 	
 	if Input.is_action_just_pressed("interact") and can_switch:
 		if Global.lights_out:
@@ -67,13 +69,8 @@ func set_invincible(status=true):
 
 func _on_Area2D_body_entered(body):
 	if not invicible:
-		# Then just got hit
-		print("Ouch")
+		health -= 1
 		set_invincible(true)
-#
-#		# jump back
-		print(last_collision)
-			
 		
 #	var direction = (body.global_position - global_position).normalized()
 #	var velocity_in_direction = velocity.dot(direction)

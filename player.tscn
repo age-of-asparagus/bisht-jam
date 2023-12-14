@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/bisht_jam_player_temp (2).png" type="Texture" id=1]
 [ext_resource path="res://player.gd" type="Script" id=2]
+[ext_resource path="res://assets/New Piskel-1.png (6).png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.75
@@ -70,6 +71,12 @@ collision_mask = 4
 shape = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="hearts" type="TextureRect" parent="CanvasLayer"]
+margin_right = 22.0
+margin_bottom = 18.0
+texture = ExtResource( 3 )
+stretch_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Flash = SubResource( 3 )
