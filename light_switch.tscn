@@ -4,6 +4,7 @@
 [ext_resource path="res://assets/lightswitch_temp.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 4.0
 
 [node name="light_switch" type="Area2D"]
 collision_layer = 0
@@ -16,4 +17,3 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_light_switch_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_light_switch_body_exited"]

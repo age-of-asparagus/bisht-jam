@@ -4,8 +4,10 @@ extends Area2D
 
 
 func _on_light_switch_body_entered(body):
-	body.can_switch = true
+	if Global.lights_out:
+		Global.lights_out = false
+	else:
+		Global.lights_out = true
 
 
-func _on_light_switch_body_exited(body):
-	body.can_switch = false
+
