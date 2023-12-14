@@ -1,4 +1,5 @@
 extends KinematicBody2D
+onready var enemy_detector = $EnemyDetector
 
 var Spit = preload("res://attack_particles.tscn")
 var attack_rate = .5
@@ -42,22 +43,42 @@ func _physics_process(delta):
 	velocity += pushback
 	
 	look_at(get_global_mouse_position())
+	
 	move_and_slide(velocity)
 	
-	last_collision = get_last_slide_collision()
-	if last_collision and last_collision.collider.is_in_group("Enemies"):
-		# Hit by an enemy if it reaches here:
-		pushback = last_collision.normal * pushback_strength
-		health -= 1
-		if health <= 0:
-			get_tree().change_scene("res://StartMenu.tscn")
-		set_invincible(true)
-	
+	if not invicible:
+		for i in get_slide_count():
+			var collision = get_slide_collision(i)
+#			print(collision, collision.collider)
+			
+			# Could be colliding with wall, so only worry about Enemy collisions
+			if collision.collider.is_in_group("Enemies"):
+				# Hit by an enemy if it reaches here:
+				pushback += collision.normal * pushback_strength
+				
+				# Only do this once per frame, in case hit by more than one enemy in a frame
+				if not invicible:
+					get_hurt()
+		# Deal with glitch where player gets pinned against wall by enemies
+		# but only collides with wall
+		if get_slide_count() == 1 and get_slide_collision(0).collider is TileMap:
+			# Check if also overlapping an enemy
+			if enemy_detector.get_overlapping_bodies():
+				get_hurt()
+			
 	if Input.is_action_just_pressed("attack"):
 		if can_attack:
 			$attack_rate.start(attack_rate)
 			can_attack = false
 			attack()
+		can_attack = false
+		attack()
+		
+func get_hurt():
+	health -= 1
+	if health <= 0:
+		get_tree().change_scene("res://StartMenu.tscn")
+	set_invincible(true)
 
 
 func attack():
